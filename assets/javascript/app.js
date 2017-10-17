@@ -19,17 +19,27 @@
 var winCount = 0;
 var loseCount = 0;
 var triviaQuestions = [
-  Question One: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Two: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Three: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Four: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Five: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Six: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Seven: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Eight: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Nine: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-  Question Ten: ['fake answer 1', 'fake answer2', 'fake answer 3', 'real answer'], 'real answer',
-]
+	{
+		Question: "What is 10/2?",
+		Answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+      d: '1113'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		Question: "What is 30/3?",
+		Answers: {
+			a: '3',
+			b: '5',
+			c: '10'
+      d: '25'
+		},
+		CorrectAnswer: 'c'
+	}
+];
 
 
 //$("#start").on("click", setTimeout(function() {
@@ -52,4 +62,4 @@ var triviaQuestions = [
 
 
         // Clear the button alert's timeout.
-  clearTimeout(firstMessage);
+  //clearTimeout(firstMessage);
