@@ -1,0 +1,81 @@
+body {
+  border: 1px black dotted;
+}
+
+#header {
+  height: 20%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#question {
+  height: 10%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#start {
+/*  NEED TO WORK ON DISPLAY NONE HERE */
+margin-left: 33.33%;
+margin-right: 33.33%;
+border: 1px black dotted;
+text-align: center;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+#q1 {
+  height: 10%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#q2 {
+  height: 10%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#q3 {
+  height: 10%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#q4 {
+  height: 10%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#timer {
+  height: 20%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-bottom: 20px;
+}
