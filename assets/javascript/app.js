@@ -1,7 +1,3 @@
-//1. // Create a click event on a Start Button which calls a function used to play the game = game() AND DISPLAYS THE GAME
-//2. // Create an object which has -
-//      2.1 // Questions as object.keys, which have two values:
-//      2.2 // Value (1) is the answer and value (2) is array which contain 3 false answers and one true answer
 //3. // Create a function that -
 //      3.1 // Loops through the Object Array to pull out each object.key index
 //      3.2 // Then it appends/adds the question to the innerHTML of Div Object and the index value of string answers to another div element (maybe buttons)
@@ -15,51 +11,131 @@
 //4. // When the function has looped through all of the object.key questions, display final screen which appends the winCount and lossCount and adds a start button which
   // sets the win/loss count variables to zero and calls the game() function
 
-
-var winCount = 0;
-var loseCount = 0;
 var triviaQuestions = [
 	{
-		Question: "What is 10/2?",
-		Answers: {
-			a: '3',
-			b: '5',
-			c: '115'
-      d: '1113'
+		question: "What is the capital of Australia?",
+		answers: {
+			a: 'Melbourne',
+			b: 'Sydney',
+			c: 'Canberra',
+      d: 'Darwin'
+		},
+		correctAnswer: 'c'
+	},
+	{
+		question: "What is the capital city of Spain?",
+		answers: {
+			a: 'Madrid',
+			b: 'Barcelona',
+			c: 'Valencia',
+      d: 'San Sebastion'
+		},
+		correctAnswer: 'a'
+	},
+  {
+		question: "What is the capital city of Nigeria?",
+		answers: {
+			a: 'Abuja',
+			b: 'Accra',
+			c: 'Adamstown',
+      d: 'Amman'
+		},
+		correctAnswer: 'a'
+	},
+  {
+		question: "What is the capital city of Ghana?",
+		answers: {
+      a: 'Abuja',
+			b: 'Accra',
+			c: 'Adamstown',
+      d: 'Amman'
 		},
 		correctAnswer: 'b'
 	},
-	{
-		Question: "What is 30/3?",
-		Answers: {
-			a: '3',
-			b: '5',
-			c: '10'
-      d: '25'
+  {
+		question: "What is the capital city of Turkey?",
+		answers: {
+      a: 'Ankara',
+			b: 'Bursa',
+			c: 'Konya',
+      d: 'Istanbul'
 		},
-		CorrectAnswer: 'c'
+		correctAnswer: 'a'
+	},
+  {
+		question: "What is the capital city of Brazil?",
+		answers: {
+      a: 'Brasilia',
+			b: 'Rio de Janeiro',
+			c: 'San Paulo',
+      d: 'Salvador'
+		},
+		correctAnswer: 'a'
+	},
+  {
+		question: "What is the capital city of Canada?",
+		answers: {
+      a: 'Vancouver',
+			b: 'Toronto',
+			c: 'Montreal',
+      d: 'Ottawa'
+		},
+		correctAnswer: 'd'
+	},
+  {
+		question: "What is the capital city of New Zealand?",
+		answers: {
+      a: 'Auckland',
+			b: 'Wellington',
+			c: 'Christchurch',
+      d: 'Dunedin'
+		},
+		correctAnswer: 'b'
+	},
+  {
+		question: "What is the capital city of Croatia?",
+		answers: {
+      a: 'Split',
+			b: 'Dubrovnik',
+			c: 'Zagreb',
+      d: 'Zader'
+		},
+		correctAnswer: 'c'
+	},
+  {
+		question: "What is the capital city of Singapore?",
+		answers: {
+      a: 'Singapore',
+			b: 'Georgetown',
+			c: 'Kuala Lumpur',
+      d: 'Batam'
+		},
+		correctAnswer: 'a'
 	}
 ];
 
+var countDown = 30
+var intervalId;
+var winCount = 0;
+var loseCount = 0;
 
-//$("#start").on("click", setTimeout(function() {
-  //Object.getOwnPropertyNames(triviaQuestions).forEach(
-//  function (val) {
-//    console.log(triviaQuestions[val][0]);
-//})
+$("#start").click(startGame);
 
-//}), 3000);
-
-
-
-
-
+function startGame() {
+  intervalId = setInterval(decrement, 1000);
+  for
+}
 
 
+function decrement() {
+  countDown--;
+  $("#timer").html(countDown);
+    if (countDown === 0) {
+      next();
+        alert("Time Up!");
+      }
+    }
 
-
-
-
-
-        // Clear the button alert's timeout.
-  //clearTimeout(firstMessage);
+function next() {
+  clearInterval(intervalId);
+}
