@@ -11,6 +11,10 @@ body {
   margin-top: 20px;
 }
 
+#body-wrap {
+  border: 1px black dotted;
+}
+
 #question {
   height: 10%;
   margin-left: 33.33%;

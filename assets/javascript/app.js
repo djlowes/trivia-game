@@ -11,6 +11,8 @@
 //4. // When the function has looped through all of the object.key questions, display final screen which appends the winCount and lossCount and adds a start button which
   // sets the win/loss count variables to zero and calls the game() function
 
+$(document).ready(function() {
+
 var triviaQuestions = [
 	{
 		question: "What is the capital of Australia?",
@@ -117,13 +119,36 @@ var triviaQuestions = [
 var countDown = 30
 var intervalId;
 var winCount = 0;
+var unanswerCount = 0;
 var loseCount = 0;
+//var isClicked = $(".qs").on("click");
+//var userGuess = ""
 
-$("#start").click(startGame);
+$("#start").on("click", function() {
+	$("#start").hide();
+	showQuestions();
+	intervalId = setInterval(decrement, 1000);
+});
 
-function startGame() {
-  intervalId = setInterval(decrement, 1000);
-  for
+function showQuestions() {
+  for (i=0; i<triviaQuestions.length; i++) {
+		$("#question").html(triviaQuestions[i].question);
+		$("#q1").html(triviaQuestions[i].answers.a);
+		$("#q2").html(triviaQuestions[i].answers.b);
+		$("#q3").html(triviaQuestions[i].answers.c);
+		$("#q4").html(triviaQuestions[i].answers.d);
+		console.log(triviaQuestions[i].answers.b)
+		clickFunction();
+		// HOW CAN I LOOP THROUGH THIS ARRAY SO THAT AFTER AN ONCLICK EVENT IT MOVES TO THE NEXT VALUE IN THE ARRAY
+}
+
+	function clickFunction () {
+			$(".qs").on("click", function() {
+		if ($(this).attr("value") === triviaQuestions[0].correctAnswer) {
+			return
+			}
+ });
+}
 }
 
 
@@ -131,6 +156,7 @@ function decrement() {
   countDown--;
   $("#timer").html(countDown);
     if (countDown === 0) {
+			incorrect();
       next();
         alert("Time Up!");
       }
@@ -139,3 +165,17 @@ function decrement() {
 function next() {
   clearInterval(intervalId);
 }
+
+function incorrect() {
+
+}
+
+function correct() {
+
+}
+
+
+
+
+
+})
