@@ -17,7 +17,6 @@ body {
   -webkit-flex-flow: row;
   flex-flow: row;
   flex-direction: row
-
 }
 
 #header,
@@ -42,7 +41,8 @@ body {
 #right {
   border: 1px black dotted;
   width: 100%;
-  min-height: 100%;
+  min-height: 450px;
+  display: none;
 }
 
 #question {
@@ -56,40 +56,9 @@ body {
   font-size: 2em;
 }
 
-
-#q1 {
-  height: 10%;
-  margin-left: 2%;
-  margin-right: 2%;
-  border: 1px black dotted;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  font-size: 1.5em;
-}
-
-#q2 {
-  height: 10%;
-  margin-left: 2%;
-  margin-right: 2%;
-  border: 1px black dotted;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  font-size: 1.5em;
-}
-
-#q3 {
-  height: 10%;
-  margin-left: 2%;
-  margin-right: 2%;
-  border: 1px black dotted;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  font-size: 1.5em;
-}
-
+#q1,
+#q2,
+#q3,
 #q4 {
   height: 10%;
   margin-left: 2%;
@@ -101,13 +70,6 @@ body {
   font-size: 1.5em;
 }
 
-#right {
-  border: 1px black dotted;
-  width: 100%;
-  min-height: 450px;
-  display: none;
-}
-
 #timerwrap {
   height: 90%;
   width: 90%;
@@ -116,31 +78,33 @@ body {
   margin-top: 5%;
   margin-bottom: 5%;
   border: 1px black dotted;
+  text-align: center;
+  font-size: 4em;
+}
 
+#timer,
+#result {
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: 1px black dotted;
+  text-align: center;
 }
 
 #timer {
-  height: 80%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  border: 1px black dotted;
-  text-align: center;
-  font-size: 10em;
+  font-size: 3em;
+}
+#result {
+  font-size: 1.5em;
+}
+
+#start {
 
 }
 
-#result {
-  display: hidden;
-  height: 80%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  border: 1px black dotted;
-  text-align: center;
+#playagain {
 
 }
