@@ -2,24 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sports Trivia Game</title>
+    <title>Capital Cities</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href='assets/css/style.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
-      <div id="header"><h1>Sports Trivia Game</h1></div>
-        <div id="body-wrap">
-          <div id ="start">Start</div>
+      <div id="header"><h1>Capital Cities</h1></div>
+        <div id="main">
 
 <!-- After start button is pressed, display game -->
+        <div id="left" class="column">
           <div id="question"></div>
           <div id="q1" value="a" class="qs"></div>
           <div id="q2" value="b" class="qs"></div>
           <div id="q3" value="c" class="qs"></div>
           <div id="q4" value="d" class="qs"></div>
-            <div id ="timer"></div>
         </div>
+        <div id ="right" class="column">
+          <div id="timerwrap">
+            <div id ="timer"></div>
+            <div id ="result"></div>
+          </div>
+        </div>
+      </div>
+        <div id ="footer">Start</div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

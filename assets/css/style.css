@@ -1,85 +1,146 @@
 body {
   border: 1px black dotted;
+  margin: 1em;
 }
 
-#header {
-  height: 20%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+#header, #footer {
+  display: block;
+  min-height: 20%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 20px;
 }
 
-#body-wrap {
+#main {
   border: 1px black dotted;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  flex-direction: row
+
+}
+
+#header,
+#footer,
+#main {
+  padding: 2em;
+}
+
+.column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#left {
+  border: 1px black dotted;
+  width: 100%;
+  min-height: 450px;
+  display: none;
+}
+
+#right {
+  border: 1px black dotted;
+  width: 100%;
+  min-height: 100%;
 }
 
 #question {
   height: 10%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  margin-left: 2%;
+  margin-right: 2%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  font-size: 2em;
 }
 
-#start {
-/*  NEED TO WORK ON DISPLAY NONE HERE */
-margin-left: 33.33%;
-margin-right: 33.33%;
-border: 1px black dotted;
-text-align: center;
-margin-top: 5px;
-margin-bottom: 5px;
-}
 
 #q1 {
   height: 10%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  margin-left: 2%;
+  margin-right: 2%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 1.5em;
 }
 
 #q2 {
   height: 10%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  margin-left: 2%;
+  margin-right: 2%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 1.5em;
 }
 
 #q3 {
   height: 10%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  margin-left: 2%;
+  margin-right: 2%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 1.5em;
 }
 
 #q4 {
   height: 10%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  margin-left: 2%;
+  margin-right: 2%;
   border: 1px black dotted;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 1.5em;
+}
+
+#right {
+  border: 1px black dotted;
+  width: 100%;
+  min-height: 450px;
+  display: none;
+}
+
+#timerwrap {
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px black dotted;
+
 }
 
 #timer {
-  height: 20%;
-  margin-left: 33.33%;
-  margin-right: 33.33%;
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   border: 1px black dotted;
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 10em;
+
+}
+
+#result {
+  display: hidden;
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: 1px black dotted;
+  text-align: center;
+
 }

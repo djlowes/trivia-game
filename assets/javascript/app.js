@@ -1,16 +1,3 @@
-//3. // Create a function that -
-//      3.1 // Loops through the Object Array to pull out each object.key index
-//      3.2 // Then it appends/adds the question to the innerHTML of Div Object and the index value of string answers to another div element (maybe buttons)
-//      3.3 // And sets a time limit to 30seconds for the user to choose a response, which is appended to div element as countdown clock
-//      3.4 // If the user does not choose a response then -
-//          3.41 // Call new function with Time limit of 5 seconds that append/add the Word 'Loser' to html div, play loser Audio and add++ to variable lossCount and add right answer to element ID
-//      3.5 // Else if user chooses a response that != the answer value of the object key:
-//          3.51 // Call new function with Time limit of 5 seconds that append/add the Word 'Loser' to html div, play loser Audio and add++ to variable lossCount
-//      3.6 // Else if user chooses a response that == the answer of the vaue in the object key:
-//          3.52 // Call new function with time limit of 5 seconds that appends/add the word 'Winner' to html div, play winner Audio and add++ to variable winCount
-//4. // When the function has looped through all of the object.key questions, display final screen which appends the winCount and lossCount and adds a start button which
-  // sets the win/loss count variables to zero and calls the game() function
-
 $(document).ready(function() {
 
 var triviaQuestions = [
@@ -116,66 +103,90 @@ var triviaQuestions = [
 	}
 ];
 
-var countDown = 30
+var questionCount = 0
+var countDown = 30;
 var intervalId;
 var winCount = 0;
-var unanswerCount = 0;
 var loseCount = 0;
-//var isClicked = $(".qs").on("click");
-//var userGuess = ""
+var unanswerCount = 0;
 
-$("#start").on("click", function() {
-	$("#start").hide();
-	showQuestions();
-	intervalId = setInterval(decrement, 1000);
+
+$("#footer").on("click", function() {
+		$("#footer").hide();
+		$("#left").show();
+		$("#right").show();
+		showQuestions();
 });
 
+
 function showQuestions() {
-  for (i=0; i<triviaQuestions.length; i++) {
-		$("#question").html(triviaQuestions[i].question);
-		$("#q1").html(triviaQuestions[i].answers.a);
-		$("#q2").html(triviaQuestions[i].answers.b);
-		$("#q3").html(triviaQuestions[i].answers.c);
-		$("#q4").html(triviaQuestions[i].answers.d);
-		console.log(triviaQuestions[i].answers.b)
-		clickFunction();
-		// HOW CAN I LOOP THROUGH THIS ARRAY SO THAT AFTER AN ONCLICK EVENT IT MOVES TO THE NEXT VALUE IN THE ARRAY
+		runClock();
+		$("#timer").show();
+		$("#result").hide();
+		$("#question").html(triviaQuestions[questionCount].question);
+		$("#q1").html(triviaQuestions[questionCount].answers.a);
+		$("#q2").html(triviaQuestions[questionCount].answers.b);
+		$("#q3").html(triviaQuestions[questionCount].answers.c);
+		$("#q4").html(triviaQuestions[questionCount].answers.d);
 }
 
-	function clickFunction () {
-			$(".qs").on("click", function() {
-		if ($(this).attr("value") === triviaQuestions[0].correctAnswer) {
-			return
-			}
- });
-}
-}
 
+$(".qs").on("click", function() {
+userGuess = $(this).attr("value");
+	if (userGuess === triviaQuestions[questionCount].correctAnswer) {
+		winCount++;
+		clearInterval(intervalId);
+		setTimeout(correct, 4000);
+	} else {
+		loseCount++;
+		clearInterval(intervalId);
+		setTimeout(incorrect, 4000);
+	}
+});
+
+function runClock(){
+	intervalId = setInterval(decrement, 1000);
+}
 
 function decrement() {
   countDown--;
   $("#timer").html(countDown);
     if (countDown === 0) {
-			incorrect();
-      next();
-        alert("Time Up!");
+		unanswerCount++
+		$("#timer").hide()
+			$("#timerwrap").html("You are out of time!!");
+        	console.log("Out of time");
+			stop();
       }
     }
 
-function next() {
-  clearInterval(intervalId);
-}
-
-function incorrect() {
-
-}
-
-function correct() {
-
+function stop() {
+	running = false;
+	clearInterval(intervalId);
+	showQuestions()
 }
 
 
+var correct = function() {
+	//$(this).find('div').css("background-color", "yellow");
+	$("#timer").hide()
+	$("#result").show();
+	$("#result").html("Well done, you guessed correct!");
+	console.log("Correct Guess")
+	questionCount++
+	countDown = 30
+	showQuestions();
+}
+
+var incorrect = function () {
+	$("#timer").hide()
+	$("#result").show();
+	$("#result").html("You Guessed Wrong");
+	console.log("Wrong Guess")
+	questionCount++
+	countDown = 30
+	showQuestions();
+}
 
 
-
-})
+});
