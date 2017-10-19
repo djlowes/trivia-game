@@ -34,14 +34,14 @@ body {
 #left {
   border: 1px black dotted;
   width: 100%;
-  min-height: 450px;
+  min-height: 400px;
   display: none;
 }
 
 #right {
   border: 1px black dotted;
   width: 100%;
-  min-height: 450px;
+  min-height: 400px;
   display: none;
 }
 
@@ -79,7 +79,7 @@ body {
   margin-bottom: 5%;
   border: 1px black dotted;
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
 }
 
 #timer,
@@ -106,5 +106,9 @@ body {
 }
 
 #playagain {
+
+}
+
+#gameresults {
 
 }

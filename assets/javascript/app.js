@@ -114,7 +114,6 @@ $("#playagain").hide();
 
 $("#start").on("click", function() {
 		$("#start").hide();
-		$("#playagain").show();
 		$("#left").show();
 		$("#right").show();
 		showQuestions();
@@ -150,7 +149,7 @@ userGuess = $(this).attr("value");
 		questionCount++
 		$("#timer").hide()
 		$("#result").show()
-		$("#result").html("You didn't get it this time. Try again");
+		$("#result").html("Incorrect. Try again next time");
 		clearInterval(intervalId);
 		setTimeout(reset, 4000);
 	}
@@ -183,18 +182,26 @@ var reset = function() {
 }
 
 function over() {
+	$("#gameresults").html("<h3>Your Results</h3><br /><b>Correct: </b>" + winCount + "<br /><b>Incorrect: </b>" + loseCount + "<br /><b>Unaswered: </b>" + unanswerCount )
 	$("#left").hide();
 	$("#right").hide();
+	$("#playagain").show();
+
 }
 
 $("#playagain").on("click", function() {
-	var questionCount = 0
-	var countDown = 30;
-	var intervalId;
-	var winCount = 0;
-	var loseCount = 0;
-	var unanswerCount = 0;
-
+	questionCount = 0
+	countDown = 30;
+	intervalId;
+	winCount = 0;
+	loseCount = 0;
+	unanswerCount = 0;
+	$("#start").hide();
+	$("#gameresults").hide();
+	$("#playagain").hide();
+	$("#left").show();
+	$("#right").show();
+	showQuestions();
 });
 
 
