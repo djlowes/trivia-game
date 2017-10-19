@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Russo+One');
+
 body {
-  border: 1px black dotted;
   margin: 1em;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #header, #footer {
   display: block;
   min-height: 20%;
-  border: 1px black dotted;
   text-align: center;
 }
 
 #main {
-  border: 1px black dotted;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row;
@@ -54,6 +57,7 @@ body {
   margin-top: 8%;
   margin-bottom: 8%;
   font-size: 2em;
+  background: #d4e2f9;
 }
 
 #q1,
@@ -68,45 +72,60 @@ body {
   margin-top: 2%;
   margin-bottom: 2%;
   font-size: 1.5em;
+  background: #b5d1ff;
 }
 
-#timerwrap {
+#q1:hover,
+#q2:hover,
+#q3:hover,
+#q4:hover {
+  background: #93b5ed;
+}
+
+/*#timerwrap {
+  height: 95%;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  text-align: center;
+  font-size: 4em;
+}*/
+
+#timer,
+#result {
   height: 90%;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
-  border: 1px black dotted;
-  text-align: center;
-  font-size: 3em;
-}
-
-#timer,
-#result {
-  height: 80%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  border: 1px black dotted;
   text-align: center;
 }
 
 #timer {
-  font-size: 3em;
+  font-size: 16em;
+  font-family: 'Russo One', sans-serif;
 }
 #result {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 #start {
+  font-family: 'Russo One', sans-serif
+  font-size: 1.5em;
+  font-weight: 600;
+  background: #93b5ed;
 
 }
 
 #playagain {
-
+  font-family: 'Russo One', sans-serif
+  font-size: 1.5em;
+  font-weight: 600;
+  background: #93b5ed;
+  margin-top: 5%;
 }
 
 #gameresults {

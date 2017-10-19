@@ -9,7 +9,8 @@ var triviaQuestions = [
 			c: 'Canberra',
       d: 'Darwin'
 		},
-		correctAnswer: 'c'
+		correctAnswer: 'c',
+		rightAnswer: 'Canberra'
 	},
 	{
 		question: "What is the capital city of Spain?",
@@ -19,7 +20,8 @@ var triviaQuestions = [
 			c: 'Valencia',
       d: 'San Sebastion'
 		},
-		correctAnswer: 'a'
+		correctAnswer: 'a',
+		rightAnswer: 'Madrid'
 	},
   {
 		question: "What is the capital city of Nigeria?",
@@ -29,7 +31,8 @@ var triviaQuestions = [
 			c: 'Adamstown',
       d: 'Amman'
 		},
-		correctAnswer: 'a'
+		correctAnswer: 'a',
+		rightAnswer: 'Abuja'
 	},
   {
 		question: "What is the capital city of Ghana?",
@@ -39,7 +42,8 @@ var triviaQuestions = [
 			c: 'Adamstown',
       d: 'Amman'
 		},
-		correctAnswer: 'b'
+		correctAnswer: 'b',
+		rightAnswer: 'Accra'
 	},
   {
 		question: "What is the capital city of Turkey?",
@@ -49,7 +53,8 @@ var triviaQuestions = [
 			c: 'Konya',
       d: 'Istanbul'
 		},
-		correctAnswer: 'a'
+		correctAnswer: 'a',
+		rightAnswer: 'Ankara'
 	},
   {
 		question: "What is the capital city of Brazil?",
@@ -59,7 +64,8 @@ var triviaQuestions = [
 			c: 'San Paulo',
       d: 'Salvador'
 		},
-		correctAnswer: 'a'
+		correctAnswer: 'a',
+		rightAnswer: 'Brasilia'
 	},
   {
 		question: "What is the capital city of Canada?",
@@ -69,7 +75,8 @@ var triviaQuestions = [
 			c: 'Montreal',
       d: 'Ottawa'
 		},
-		correctAnswer: 'd'
+		correctAnswer: 'd',
+		rightAnswer: 'Ottawa'
 	},
   {
 		question: "What is the capital city of New Zealand?",
@@ -79,7 +86,8 @@ var triviaQuestions = [
 			c: 'Christchurch',
       d: 'Dunedin'
 		},
-		correctAnswer: 'b'
+		correctAnswer: 'b',
+		rightAnswer: 'Wellington'
 	},
   {
 		question: "What is the capital city of Croatia?",
@@ -89,7 +97,8 @@ var triviaQuestions = [
 			c: 'Zagreb',
       d: 'Zader'
 		},
-		correctAnswer: 'c'
+		correctAnswer: 'c',
+		rightAnswer: 'Zagreb'
 	},
   {
 		question: "What is the capital city of Singapore?",
@@ -99,7 +108,8 @@ var triviaQuestions = [
 			c: 'Kuala Lumpur',
       d: 'Batam'
 		},
-		correctAnswer: 'a'
+		correctAnswer: 'a',
+		rightAnswer: 'Singapore'
 	}
 ];
 
@@ -121,12 +131,12 @@ $("#start").on("click", function() {
 
 
 function showQuestions() {
-		runClock();
 		$("#question").html(triviaQuestions[questionCount].question);
 		$("#q1").html(triviaQuestions[questionCount].answers.a);
 		$("#q2").html(triviaQuestions[questionCount].answers.b);
 		$("#q3").html(triviaQuestions[questionCount].answers.c);
 		$("#q4").html(triviaQuestions[questionCount].answers.d);
+		runClock();
 			if (questionCount ===9) {
 				over();
 			}
@@ -140,7 +150,7 @@ userGuess = $(this).attr("value");
 		questionCount++
 		$("#timer").hide()
 		$("#result").show()
-		$("#result").html("You got it right! Well done!");
+		$("#result").html("<img src='assets/images/correct.gif' height='200' width='400'><br />You are <b>correct</b>");
 		clearInterval(intervalId);
 		setTimeout(reset, 4000);
 	} else {
@@ -149,7 +159,7 @@ userGuess = $(this).attr("value");
 		questionCount++
 		$("#timer").hide()
 		$("#result").show()
-		$("#result").html("Incorrect. Try again next time");
+		$("#result").html("<img src='assets/images/false.gif' height='250' width='400'></br /><b>Wrong</b>. The answer is " + triviaQuestions[questionCount].rightAnswer);
 		clearInterval(intervalId);
 		setTimeout(reset, 4000);
 	}
