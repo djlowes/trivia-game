@@ -123,7 +123,9 @@ $("#playagain").hide();
 
 
 $("#start").on("click", function() {
+	//$("#map").addClass('magictime vanishOut');
 		$("#start").hide();
+		$("#map").hide();
 		$("#left").show();
 		$("#right").show();
 		showQuestions();
@@ -152,16 +154,16 @@ userGuess = $(this).attr("value");
 		$("#result").show()
 		$("#result").html("<img src='assets/images/correct.gif' height='200' width='400'><br />You are <b>correct</b>");
 		clearInterval(intervalId);
-		setTimeout(reset, 4000);
+		setTimeout(reset, 3000);
 	} else {
 		console.log("Incorrect Guess")
 		loseCount++;
 		questionCount++
 		$("#timer").hide()
 		$("#result").show()
-		$("#result").html("<img src='assets/images/false.gif' height='250' width='400'></br /><b>Wrong</b>. The answer is " + triviaQuestions[questionCount].rightAnswer);
+		$("#result").html("<img src='assets/images/false.gif' height='250' width='400'></br /><b>Wrong</b>. The answer is " + triviaQuestions[questionCount -1].rightAnswer);
 		clearInterval(intervalId);
-		setTimeout(reset, 4000);
+		setTimeout(reset, 3000);
 	}
 });
 
@@ -182,7 +184,7 @@ function decrement() {
 			$("#result").html("You are out of time!!");
       console.log("Out of time");
 			clearInterval(intervalId);
-			setTimeout(reset, 4000);
+			setTimeout(reset, 3000);
    }
 }
 
